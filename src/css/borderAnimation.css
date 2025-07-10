@@ -1,0 +1,49 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  position: relative;
+  padding: 3px;
+  border-radius: 12px;
+  background: conic-gradient(
+    from calc(var(--angle) + 270deg),
+    transparent 92%,
+    blue
+  );
+  animation: spin 3s linear infinite;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: conic-gradient(
+    from calc(var(--angle) + 270deg),
+    transparent 92%,
+    blue
+  );
+  z-index: -1;
+  animation: spin 3s linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

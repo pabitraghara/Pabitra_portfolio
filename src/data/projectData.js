@@ -1,0 +1,107 @@
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNestjs,
+  SiPostgresql,
+  SiDiscord,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+
+export const projects = [
+  {
+    name: "Online Food Delivery System",
+    image: "/public/tomato.png",
+    logos: [
+      { icon: FaReact, color: "bg-blue-500" },
+      { icon: FaNodeJs, color: "bg-green-600" },
+      { icon: SiMongodb, color: "bg-emerald-600" },
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiCss3, color: "bg-blue-600" },
+      { icon: SiBootstrap, color: "bg-purple-600" },
+    ],
+    githublink: "https://github.com/pabitraghara/food-app",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    // livelink: "https://vercel.com",
+  },
+  {
+    name: "Manali Tours Website",
+    image: "/public/manali.png",
+    logos: [
+      { icon: SiNestjs, color: "bg-red-600" },
+      { icon: FaReact, color: "bg-blue-500" },
+      { icon: SiTypescript, color: "bg-blue-700" },
+      { icon: SiTailwindcss, color: "bg-cyan-500" },
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiPostgresql, color: "bg-blue-900" },
+      { icon: TbBrandNextjs, color: "bg-black" },
+    ],
+    githublink:
+      "https://github.com/pabitraghara/Manali-Tour-Package-full-stack",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    // livelink: "https://vercel.com",
+  },
+  {
+    image: "./public/rozerpay.png",
+    name: "Razorpay",
+    logos: [
+      { icon: FaReact, color: "bg-blue-500" },
+      { icon: SiTailwindcss, color: "bg-cyan-500" },
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiCss3, color: "bg-blue-600" },
+    ],
+    githublink: "https://github.com/pabitraghara/Razorpay_Clone",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    livelink: "https://razorpay-clone-jade-pi.vercel.app/",
+  },
+  {
+    name: "Discord UI Clone",
+    image: "public/discord.png",
+    logos: [
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiCss3, color: "bg-blue-600" },
+      { icon: SiTailwindcss, color: "bg-cyan-500" },
+      { icon: FaReact, color: "bg-blue-500" },
+      { icon: SiNextdotjs, color: "bg-black" },
+      { icon: SiDiscord, color: "bg-indigo-600" },
+    ],
+    githublink: "https://github.com/pabitraghara/Discord",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    livelink: "https://discord-seven-wine-88.vercel.app/",
+  },
+  {
+    name: "Railway Reservation System",
+    image: "",
+    logos: [
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiCss3, color: "bg-blue-600" },
+      { icon: SiJavascript, color: "bg-yellow-500" },
+      { icon: SiMysql, color: "bg-sky-700" },
+    ],
+    githublink: "https://github.com/pabitraghara",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    // livelink: "https://vercel.com",
+  },
+  {
+    name: "Bus Reservation System",
+    image: "",
+    logos: [
+      { icon: FaReact, color: "bg-blue-500" },
+      { icon: FaNodeJs, color: "bg-green-600" },
+      { icon: SiMongodb, color: "bg-emerald-600" },
+      { icon: SiHtml5, color: "bg-orange-500" },
+      { icon: SiCss3, color: "bg-blue-600" },
+      { icon: SiBootstrap, color: "bg-purple-600" },
+    ],
+    githublink: "https://github.com/pabitraghara",
+    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    // livelink: "https://vercel.com",
+  },
+];

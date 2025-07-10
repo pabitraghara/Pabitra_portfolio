@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border {
+  background: linear-gradient(270deg, #00f0ff, #ff00c8, #00f0ff);
+  background-size: 600% 600%;
+  animation: borderAnimation 4s ease infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 2px; /* thickness of the animated border */
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #0c50ee, #040507, #b62170);
+  z-index: 0;
+  border-radius: 0.5rem;
+  animation: borderGlow 2s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.resume-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, black, green, #b62170);
+  z-index: 0;
+  border-radius: 0.5rem;
+  animation: resume 2s linear infinite;
+}
+
+.resume-button span {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes resume {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.box {
+  position: relative;
+  z-index: 1;
+  border: 2px solid transparent;
+  background: linear-gradient(black, black) padding-box,
+    conic-gradient(
+        from 0deg,
+        #d11149,
+        #e68aff,
+        #ff4800,
+        #11ebff,
+        #cdff58,
+        #d11149
+      )
+      border-box;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  animation: rotate-border-gradient 3s linear infinite;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    #d11149,
+    #e68aff,
+    #ff4800,
+    #11ebff,
+    #cdff58,
+    #d11149
+  );
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box:hover::before {
+  opacity: 0.7;
+  animation: rotate-border 3s linear infinite;
+}
+
+.box:hover {
+  box-shadow: 0 0 20px rgba(209, 17, 73, 0.3);
+}
+
+/* @keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+@keyframes rotate-border-gradient {
+  0% {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(
+          from 0deg,
+          #d11149,
+          #e68aff,
+          #ff4800,
+          #11ebff,
+          #cdff58,
+          #d11149
+        )
+        border-box;
+  }
+  25% {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(
+          from 90deg,
+          #d11149,
+          #e68aff,
+          #ff4800,
+          #11ebff,
+          #cdff58,
+          #d11149
+        )
+        border-box;
+  }
+  50% {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(
+          from 180deg,
+          #d11149,
+          #e68aff,
+          #ff4800,
+          #11ebff,
+          #cdff58,
+          #d11149
+        )
+        border-box;
+  }
+  75% {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(
+          from 270deg,
+          #d11149,
+          #e68aff,
+          #ff4800,
+          #11ebff,
+          #cdff58,
+          #d11149
+        )
+        border-box;
+  }
+  100% {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(
+          from 360deg,
+          #d11149,
+          #e68aff,
+          #ff4800,
+          #11ebff,
+          #cdff58,
+          #d11149
+        )
+        border-box;
+  }
+}
