@@ -18,7 +18,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 export const projects = [
   {
     name: "Online Food Delivery System",
-    image: "/public/tomato.png",
+    image: "/tomato.png",
     logos: [
       { icon: FaReact, color: "bg-blue-500" },
       { icon: FaNodeJs, color: "bg-green-600" },
@@ -33,7 +33,7 @@ export const projects = [
   },
   {
     name: "Manali Tours Website",
-    image: "/public/manali.png",
+    image: "/manali.png",
     logos: [
       { icon: SiNestjs, color: "bg-red-600" },
       { icon: FaReact, color: "bg-blue-500" },
@@ -49,7 +49,7 @@ export const projects = [
     // livelink: "https://vercel.com",
   },
   {
-    image: "./public/rozerpay.png",
+    image: "./rozerpay.png",
     name: "Razorpay",
     logos: [
       { icon: FaReact, color: "bg-blue-500" },
@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     name: "Discord UI Clone",
-    image: "public/discord.png",
+    image: "/discord.png",
     logos: [
       { icon: SiHtml5, color: "bg-orange-500" },
       { icon: SiCss3, color: "bg-blue-600" },
