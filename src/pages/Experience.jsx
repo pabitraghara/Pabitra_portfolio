@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/borderAnimation.css"; // Make sure to import the custom CSS
+import "../css/borderAnimation.css"; // Ensure this file exists and includes the animation
 
 const Experience = () => {
   return (
@@ -17,49 +17,58 @@ const Experience = () => {
             <h3 className="text-2xl font-semibold text-blue-500">
               Full Stack Developer Intern
             </h3>
-            <div className="text-white text-sm mb-2">
-              HeyCoach – Internship | Mar 2025 – July 2025
+            <div className="text-white text-sm mb-4">
+              HeyCoach – Internship | <time dateTime="2025-03">Mar 2025</time> –{" "}
+              <time dateTime="2025-07">July 2025</time>
             </div>
 
-            <ul className="list-disc list-inside text-[#c8c3c3] leading-relaxed space-y-2 mt-4">
-              <li>
-                Worked on the <strong>Sync</strong> project, contributing to
-                end-to-end feature development in a collaborative Agile
-                environment.
-              </li>
-              <li>
-                Developed a popular <strong>Resume Review</strong> system where
-                mentees could upload resumes and receive personalized mentor
-                feedback within 48 hours.
-              </li>
-              <li>
-                Implemented <strong>email reminders using BullMQ</strong> for
-                scheduled notifications and background processing.
-              </li>
-              <li>
-                Developed dynamic and responsive UIs using{" "}
-                <strong>React.js</strong>, <strong>Next.js</strong>,{" "}
-                <strong>TypeScript</strong>, <strong>HTML5</strong>,{" "}
-                <strong>CSS3</strong>, and <strong>Tailwind CSS</strong>.
-              </li>
-              <li>
-                Created and maintained scalable backend services using{" "}
-                <strong>NestJS</strong>, <strong>Node.js</strong>, and{" "}
-                <strong>Express.js</strong>.
-              </li>
-              <li>
-                Designed and integrated secure <strong>RESTful APIs</strong> for
-                modules like authentication and resume analysis.
-              </li>
-              <li>
-                Managed and queried relational data using{" "}
-                <strong>PostgreSQL</strong>.
-              </li>
-              <li>
-                Used <strong>Git</strong> for version control and collaborated
-                via code reviews and regular deployments.
-              </li>
-            </ul>
+            <div className="grid md:grid-cols-2 items-start">
+              <ol className="list-decimal list-inside text-[#c8c3c3] leading-relaxed space-y-2">
+                <li>
+                  Worked on the <strong>Sync</strong> project, contributing to
+                  end-to-end feature development in a collaborative Agile
+                  environment.
+                </li>
+                <li>
+                  Developed a popular <strong>Resume Review</strong> system
+                  where mentees could upload resumes and receive personalized
+                  mentor feedback within 48 hours.
+                </li>
+                <li>
+                  Implemented <strong>email reminders using BullMQ</strong> for
+                  scheduled notifications and background processing.
+                </li>
+                <li>
+                  Developed dynamic and responsive UIs using{" "}
+                  <strong>React.js</strong>, <strong>Next.js</strong>,{" "}
+                  <strong>TypeScript</strong>, <strong>HTML5</strong>,{" "}
+                  <strong>CSS3</strong>, and <strong>Tailwind CSS</strong>.
+                </li>
+                <li>
+                  Created and maintained scalable backend services using{" "}
+                  <strong>NestJS</strong>, <strong>Node.js</strong>, and{" "}
+                  <strong>Express.js</strong>.
+                </li>
+                <li>
+                  Designed and integrated secure <strong>RESTful APIs</strong>{" "}
+                  for modules like authentication and resume analysis.
+                </li>
+                <li>
+                  Managed and queried relational data using{" "}
+                  <strong>PostgreSQL</strong>.
+                </li>
+                <li>
+                  Used <strong>Git</strong> for version control and collaborated
+                  via code reviews and regular deployments.
+                </li>
+              </ol>
+
+              <img
+                src="Pabitra_Internship_Certificate.jpg"
+                alt="Internship Certificate from HeyCoach"
+                className="rounded-md w-full max-w-md mx-auto border border-gray-300 sm:-mt-14"
+              />
+            </div>
           </div>
         </div>
       </div>
