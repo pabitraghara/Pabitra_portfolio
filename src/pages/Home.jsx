@@ -1,5 +1,5 @@
 import React from "react";
-import cv from "../../public/Pabitra_Ghara_CV.pdf";
+import cv from "../../public/pabitraGhara.pdf";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -7,7 +7,11 @@ import { FaGithub } from "react-icons/fa6";
 
 const Home = () => {
   const handleDownload = async () => {
-    // 1. Send message to Discord
+    // 1. Open the resume in a new tab first (this preserves the "click" gesture)
+    const resumeUrl = cv; // Make sure this is correct (e.g., from public folder)
+    window.open(resumeUrl, "_blank");
+
+    // 2. Then asynchronously send the Discord message
     await fetch(
       "https://discord.com/api/webhooks/1361728535047176393/XO14QcOY7DvaQPy2Z8UP3Wrytoy3baKwOS8hg01wA_9A6NENcvNh0MLiLmvLtTgsJfPM",
       {
@@ -20,10 +24,8 @@ const Home = () => {
         }),
       }
     );
-
-    // 2. Open the resume link in a new tab
-    window.open(cv, "_blank");
   };
+
   return (
     <div className="bg-white">
       {/* Hero Section */}

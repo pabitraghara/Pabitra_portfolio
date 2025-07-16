@@ -10,6 +10,7 @@ const Card = ({ image, name, logos, githublink, githubrepolink, livelink }) => {
         <img
           src={image}
           alt={name}
+          loading="lazy"
           className="w-full h-52 object-cover transition duration-300 group-hover:scale-105"
         />
       </div>
