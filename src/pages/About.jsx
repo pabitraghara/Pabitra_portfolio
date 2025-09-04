@@ -30,6 +30,7 @@ const About = () => {
                 Applications (MCA) at Meghnad Saha Institute of Technology,
                 focusing on advanced topics in computer science and technology.
               </p>
+
               <p className="text-gray-600 mb-8 leading-relaxed">
                 After completing my studies, I began my professional journey as
                 a Full Stack Developer Intern at HeyCoach, where I gained 4
@@ -38,18 +39,22 @@ const About = () => {
                 Next.js, React, NestJS, TypeScript, Node.js, JavaScript,
                 Tailwind CSS, and Git.
               </p>
-              {/* <p className="text-gray-600 mb-8 leading-relaxed">
-                At HeyCoach, I contributed to the development of various
-                impactful features — one of the most notable being a complete
-                Resume Review System, enabling users to upload, analyze, and
-                receive structured feedback on their resumes in a seamless
-                end-to-end workflow.
-              </p> */}
+
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Currently, I’m working as a Frontend Developer Intern at Macv,
+                where I focus on building responsive, user-friendly interfaces
+                and integrating APIs using React.js, Next.js, TypeScript, and
+                Tailwind CSS. I collaborate with backend teams, ensure smooth
+                data handling, and contribute to delivering seamless user
+                experiences in an Agile environment.
+              </p>
+
               <p className="text-gray-600 mb-8 leading-relaxed">
                 This journey has shaped me into a confident and capable
                 developer who thrives on solving real-world challenges through
-                technology. I'm passionate about full-stack development,
-                lifelong learning, and building meaningful digital experiences.
+                technology. I'm passionate about full-stack and frontend
+                development, lifelong learning, and building meaningful digital
+                experiences.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -181,11 +186,21 @@ const About = () => {
                   {/* BACK SIDE — visible on hover (Experience card) */}
                   <div className="card-back  absolute inset-0 p-[3px] rounded-lg backface-hidden rotate-y-180">
                     <div className="relative bg-black p-6 rounded-lg shadow-md text-white h-full">
-                      <h3 className="text-2xl font-semibold text-blue-500">
-                        Full Stack Developer Intern
-                      </h3>
-                      <div className="text-white text-sm mb-2">
-                        HeyCoach – Internship | Mar 2025 – July 2025
+                      <div>
+                        <h3 className="text-2xl font-semibold text-blue-500">
+                          Full Stack Developer Intern
+                        </h3>
+                        <div className="text-white text-sm mb-2">
+                          HeyCoach – Internship | Mar 2025 – July 2025
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-blue-500">
+                          Frontend Developer Intern
+                        </h3>
+                        <div className="text-white text-sm mb-2">
+                          Macv - Internship | Aug 2025 – Present
+                        </div>
                       </div>
                       {/* Your bullet list can go here */}
                     </div>
@@ -207,11 +222,21 @@ const About = () => {
                   {/* BACK SIDE — visible on hover (Experience card) */}
                   <div className="card-back  absolute inset-0 p-[3px] rounded-lg backface-hidden rotate-y-180">
                     <div className="relative bg-black p-6 rounded-lg shadow-md text-white h-full">
-                      <h3 className="text-2xl font-semibold text-blue-500">
-                        Full Stack Developer Intern
-                      </h3>
-                      <div className="text-white text-sm mb-2">
-                        HeyCoach – Internship | Mar 2025 – July 2025
+                      <div>
+                        <h3 className="text-2xl font-semibold text-blue-500">
+                          Full Stack Developer Intern
+                        </h3>
+                        <div className="text-white text-sm mb-2">
+                          HeyCoach – Internship | Mar 2025 – July 2025
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-blue-500">
+                          Frontend Developer Intern
+                        </h3>
+                        <div className="text-white text-sm mb-2">
+                          Macv - Internship | Aug 2025 – Present
+                        </div>
                       </div>
                       {/* Your bullet list can go here */}
                     </div>

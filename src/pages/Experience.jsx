@@ -71,6 +71,49 @@ const Experience = () => {
             </div>
           </div>
         </div>
+
+        <div className="relative card">
+          <div className="relative z-10 bg-black p-6 rounded-lg shadow-md text-white">
+            <h3 className="text-2xl font-semibold text-blue-500">
+              Frontend Developer Intern
+            </h3>
+            <div className="text-white text-sm mb-4">
+              Macv – Internship | <time dateTime="2025-03">Aug 2025</time> –{" "}
+              <time dateTime="2025-07">Present</time>
+            </div>
+
+            <div className="grid md:grid-cols-1 items-start">
+              <ol className="list-decimal list-inside text-[#c8c3c3] leading-relaxed space-y-2">
+                <li>
+                  Built responsive and interactive user interfaces using{" "}
+                  <strong>React.js</strong>, <strong>Next.js</strong>,{" "}
+                  <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>
+                  .
+                </li>
+                <li>
+                  Integrated APIs and implemented secure{" "}
+                  <strong>authentication</strong> flows for various modules.
+                </li>
+                <li>
+                  Worked closely with backend developers to ensure smooth{" "}
+                  <strong>data fetching</strong> and optimized performance.
+                </li>
+                <li>
+                  Collaborated in an <strong>Agile</strong> environment with
+                  daily stand-ups, sprint planning, and peer code reviews.
+                </li>
+                <li>
+                  Managed project code using <strong>Git</strong> and maintained
+                  consistent version control practices.
+                </li>
+                <li>
+                  Enhanced cross-browser compatibility and improved{" "}
+                  <strong>accessibility</strong> for better user experience.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
