@@ -1,20 +1,27 @@
 import React from "react";
 import "../css/borderAnimation.css"; // Ensure this file exists and includes the animation
+import "../css/experienceEnhanced.css"; // Enhanced experience styles
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-16 px-6 bg-gradient-to-br from-blue-50 to-indigo-100"
+      className="py-16 px-6 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-12 text-center animate-gradient-text">
           Experience
         </h2>
 
-        <div className="relative card">
-          <div className="relative z-10 bg-black p-6 rounded-lg shadow-md text-white">
-            <h3 className="text-2xl font-semibold text-blue-500">
+        <div className="relative card experience-card-glow mb-8">
+          <div className="relative z-10 bg-gradient-to-br from-slate-800 via-purple-900 to-indigo-900 p-8 rounded-2xl shadow-2xl text-white border border-purple-500/30 backdrop-blur-sm">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
               Full Stack Developer Intern
             </h3>
             <div className="text-white text-sm mb-4">

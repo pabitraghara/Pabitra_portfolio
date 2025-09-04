@@ -1,0 +1,266 @@
+/* Floating Orbs Background Animation */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Common orb base style */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.75;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Individual orbs with unique sizes, positions, colors, and motion */
+.orb-1 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57); /* Red → Yellow */
+  top: 15%;
+  left: 10%;
+  animation-delay: -1s;
+  animation-name: float-x;
+}
+
+.orb-2 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(
+    45deg,
+    #48cae4,
+    #0096c7
+  ); /* Light Blue → Dark Blue */
+  top: 60%;
+  right: 15%;
+  animation-delay: -3s;
+  animation-name: float-y;
+}
+
+.orb-3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    45deg,
+    #9d4edd,
+    #c77dff
+  ); /* Purple → Light Purple */
+  top: 86%;
+  left: 10%;
+  animation-delay: -2s;
+  animation-name: float-xy;
+}
+
+.orb-4 {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(45deg, #06ffa5, #00d4aa); /* Green → Aqua */
+  top: 30%;
+  right: 30%;
+  animation-delay: -4s;
+  animation-name: float-yx;
+}
+
+.orb-5 {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(45deg, #ffafcc, #ff5d8f); /* Pink → Dark Pink */
+  top: 10%;
+  left: 85%;
+  animation-delay: -5s;
+  animation-name: float-x;
+}
+
+.orb-6 {
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(45deg, #ffe066, #fab005); /* Yellow → Orange */
+  top: 85%;
+  right: 20%;
+  animation-delay: -6s;
+  animation-name: float-y;
+}
+
+.orb-7 {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(45deg, #74c69d, #40916c); /* Mint → Deep Green */
+  top: 50%;
+  left: 16%;
+  animation-delay: -7s;
+  animation-name: float-xy;
+}
+
+.orb-8 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #90e0ef, #00b4d8); /* Sky → Ocean */
+  top: 10%;
+  right: 55%;
+  animation-delay: -8s;
+  animation-name: float-yx;
+}
+
+/* Different float patterns */
+@keyframes float-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes float-xy {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(40px, -40px);
+  }
+}
+
+@keyframes float-yx {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, 40px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(240deg);
+  }
+}
+
+/* Profile Glow Animation */
+.profile-glow {
+  position: relative;
+}
+
+.profile-glow::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #feca57, #48cae4, #9d4edd);
+  z-index: -1;
+  animation: rotate-gradient 3s linear infinite;
+  filter: blur(15px);
+}
+
+@keyframes rotate-gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.8),
+      0 0 90px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Fade In Up Animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animation Delays */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+/* Gradient Text Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Button Hover Effects */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .floating-orb {
+    display: none;
+  }
+}

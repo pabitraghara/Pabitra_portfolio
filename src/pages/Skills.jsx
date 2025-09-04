@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/skillsEnhanced.css";
 import { FaNodeJs } from "react-icons/fa";
 import {
   SiNestjs,
@@ -50,16 +51,23 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-gradient-to-br from-white via-indigo-50 to-indigo-100 py-20"
+      className="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-20 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-20 w-20 h-20 bg-cyan-400/20 rounded-full blur-2xl animate-bounce-slow"></div>
+        <div className="absolute top-32 right-16 w-16 h-16 bg-purple-400/20 rounded-full blur-2xl animate-bounce-slow animation-delay-1000"></div>
+        <div className="absolute bottom-20 left-32 w-24 h-24 bg-pink-400/20 rounded-full blur-2xl animate-bounce-slow animation-delay-2000"></div>
+        <div className="absolute bottom-32 right-20 w-18 h-18 bg-yellow-400/20 rounded-full blur-2xl animate-bounce-slow animation-delay-3000"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse-glow">
           My Skills
         </h2>
 
         {/* Frontend Skills */}
-        <div className="mb-10">
-          <h3 className="text-2xl font-semibold text-gray-700 mb-6">
+        <div className="mb-12">
+          <h3 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent category-header">
             Frontend
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -82,7 +90,9 @@ const Skills = () => {
 
         {/* Backend Skills */}
         <div className="mb-10">
-          <h3 className="text-2xl font-semibold text-gray-700 mb-6">Backend</h3>
+          <h3 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent category-header">
+            Backend
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {backendSkills.map((skill, idx) => {
               const Icon = skill.icon;
@@ -103,7 +113,9 @@ const Skills = () => {
 
         {/* Tools */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-700 mb-6">Tools</h3>
+          <h3 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent category-header">
+            Tools
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {tools.map((tool, idx) => {
               const Icon = tool.icon;

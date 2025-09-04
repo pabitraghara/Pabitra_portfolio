@@ -1,0 +1,95 @@
+/* Simplified Project Card Styles */
+
+/* Main card hover effects */
+.project-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(147, 51, 234, 0.2);
+}
+
+/* Image hover effects */
+.group:hover img {
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Smooth transitions for all interactive elements */
+.project-card * {
+  transition: all 0.3s ease;
+}
+
+/* Tech badge hover effects */
+.project-card .cursor-pointer:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover enhancements */
+.project-card a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient text animation */
+.bg-gradient-to-r {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-card {
+    max-width: 100%;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  /* Simplify hover effects on mobile */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Focus states for accessibility */
+.project-card a:focus {
+  outline: 2px solid rgba(147, 51, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth loading animation */
+.project-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for multiple cards */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
