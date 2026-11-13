@@ -89,7 +89,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.client_payload.base_branch }}
-          persist-credentials: false   # Claude must not be able to read a token from .git/config
+          persist-credentials: false # Claude must not be able to read a token from .git/config
 
       # ── Project setup: install what the tests need. Adapt per repository. ──
       # Example for a Python + Postgres service (macv-safety-hub):
@@ -105,12 +105,9 @@ jobs:
       #   with: { node-version: 22, cache: npm }
       # - run: npm ci
 
-      # Project setup for Pabitra_portfolio (Vite + npm).
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
 
       - name: Claude investigates and fixes
         env:
@@ -173,7 +170,11 @@ jobs:
             --permission-mode acceptEdits \
             --allowedTools "$ALLOWED" \
             --disallowedTools "WebFetch,WebSearch" \
-            --output-format json > "$RUNNER_TEMP/claude-output.json"
+            --output-format json > "$RUNNER_TEMP/claude-output.json" || {
+              # The error (e.g. an invalid API key) is in the JSON output; show it in the log.
+              echo "::error::Claude Code failed: $(jq -r '.result // empty' "$RUNNER_TEMP/claude-output.json" 2>/dev/null || cat "$RUNNER_TEMP/claude-output.json")"
+              exit 1
+            }
 
       - name: Check the result
         id: result
