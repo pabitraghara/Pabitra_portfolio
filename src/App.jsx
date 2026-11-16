@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Footer from "./layout/Footer";
 import Job from "./pages/Job";
 import Myapproach from "./pages/Myapproach";
+import Resume from "./pages/Resume";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
       <Projects />
       <Myapproach />
       <Skills />
+      <Resume />
       <Job />
       <Footer />
     </div>

@@ -2,15 +2,15 @@ import React from "react";
 
 const Job = () => {
   return (
-    <section className="py-20 px-6 bg-white">
+    <section id="contact" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
           Open for Job Roles
         </h2>
-        <p className="text-xl text-blue-600 font-semibold mb-2">
+        <p className="text-xl text-indigo-600 dark:text-indigo-400 font-semibold mb-2">
           On-Site, Hybrid, Remote
         </p>
-        <p className="text-lg text-gray-700 mb-6">
+        <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
           Reach out to me today and let's discuss how I can contribute to your
           team.
         </p>

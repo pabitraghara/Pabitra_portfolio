@@ -1,0 +1,52 @@
+// Experience timeline entries, newest first.
+export const experiences = [
+  {
+    role: "Frontend Developer Intern",
+    company: "Macv",
+    type: "Internship",
+    start: { label: "Aug 2025", dateTime: "2025-08" },
+    end: { label: "Present" },
+    current: true,
+    highlights: [
+      "Built responsive and interactive user interfaces using React.js, Next.js, TypeScript, and Tailwind CSS.",
+      "Integrated APIs and implemented secure authentication flows for various modules.",
+      "Worked closely with backend developers to ensure smooth data fetching and optimized performance.",
+      "Collaborated in an Agile environment with daily stand-ups, sprint planning, and peer code reviews.",
+      "Managed project code using Git and maintained consistent version control practices.",
+      "Enhanced cross-browser compatibility and improved accessibility for better user experience.",
+    ],
+    stack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Git"],
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "HeyCoach",
+    type: "Internship",
+    start: { label: "Mar 2025", dateTime: "2025-03" },
+    end: { label: "July 2025", dateTime: "2025-07" },
+    current: false,
+    highlights: [
+      "Worked on the Sync project, contributing to end-to-end feature development in a collaborative Agile environment.",
+      "Developed a popular Resume Review system where mentees could upload resumes and receive personalized mentor feedback within 48 hours.",
+      "Implemented email reminders using BullMQ for scheduled notifications and background processing.",
+      "Developed dynamic and responsive UIs using React.js, Next.js, TypeScript, HTML5, CSS3, and Tailwind CSS.",
+      "Created and maintained scalable backend services using NestJS, Node.js, and Express.js.",
+      "Designed and integrated secure RESTful APIs for modules like authentication and resume analysis.",
+      "Managed and queried relational data using PostgreSQL.",
+      "Used Git for version control and collaborated via code reviews and regular deployments.",
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "NestJS",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "BullMQ",
+    ],
+    certificate: {
+      src: "/Pabitra_Internship_Certificate.jpg",
+      alt: "Internship Certificate from HeyCoach",
+    },
+  },
+];
