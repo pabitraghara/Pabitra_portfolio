@@ -1,125 +1,135 @@
 import React from "react";
-import "../css/borderAnimation.css"; // Ensure this file exists and includes the animation
-import "../css/experienceEnhanced.css"; // Enhanced experience styles
+import SectionHeading from "../layout/SectionHeading";
+import useReveal from "../hooks/useReveal";
+import { experiences } from "../data/experienceData";
 
-const Experience = () => {
+const DateRange = ({ start, end }) => (
+  <>
+    <time dateTime={start.dateTime}>{start.label}</time> –{" "}
+    {end.dateTime ? <time dateTime={end.dateTime}>{end.label}</time> : end.label}
+  </>
+);
+
+const TimelineItem = ({ item, index }) => {
+  const [ref, visible] = useReveal();
+
   return (
-    <section
-      id="experience"
-      className="py-16 px-6 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 relative overflow-hidden"
+    <li
+      ref={ref}
+      className={`reveal relative pl-12 sm:pl-16 pb-14 last:pb-0 ${
+        visible ? "is-visible" : ""
+      }`}
+      style={{ transitionDelay: `${index * 120}ms` }}
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+      {/* Dot */}
+      <span
+        aria-hidden="true"
+        className={`absolute left-[9px] sm:left-[17px] top-1.5 w-4 h-4 rounded-full border-4 border-white dark:border-slate-950 ${
+          item.current
+            ? "bg-indigo-500 timeline-dot-current"
+            : "bg-slate-400 dark:bg-slate-600"
+        }`}
+      />
+
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+        <span>
+          <DateRange start={item.start} end={item.end} />
+        </span>
+        {item.current && (
+          <span className="rounded-full bg-indigo-500/10 px-2.5 py-0.5 text-xs font-semibold text-indigo-600 dark:text-indigo-300">
+            Current
+          </span>
+        )}
       </div>
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-12 text-center animate-gradient-text">
-          Experience
-        </h2>
 
-        <div className="relative card experience-card-glow mb-8">
-          <div className="relative z-10 bg-gradient-to-br from-slate-800 via-purple-900 to-indigo-900 p-8 rounded-2xl shadow-2xl text-white border border-purple-500/30 backdrop-blur-sm">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
-              Full Stack Developer Intern
-            </h3>
-            <div className="text-white text-sm mb-4">
-              HeyCoach – Internship | <time dateTime="2025-03">Mar 2025</time> –{" "}
-              <time dateTime="2025-07">July 2025</time>
-            </div>
+      <article className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-indigo-400/50 transition-all duration-300">
+        <header className="mb-5">
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+            {item.role}
+          </h3>
+          <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
+            {item.company}{" "}
+            <span className="text-slate-500 dark:text-slate-400 font-normal">
+              · {item.type}
+            </span>
+          </p>
+        </header>
 
-            <div className="grid md:grid-cols-2 items-start">
-              <ol className="list-decimal list-inside text-[#c8c3c3] leading-relaxed space-y-2">
-                <li>
-                  Worked on the <strong>Sync</strong> project, contributing to
-                  end-to-end feature development in a collaborative Agile
-                  environment.
-                </li>
-                <li>
-                  Developed a popular <strong>Resume Review</strong> system
-                  where mentees could upload resumes and receive personalized
-                  mentor feedback within 48 hours.
-                </li>
-                <li>
-                  Implemented <strong>email reminders using BullMQ</strong> for
-                  scheduled notifications and background processing.
-                </li>
-                <li>
-                  Developed dynamic and responsive UIs using{" "}
-                  <strong>React.js</strong>, <strong>Next.js</strong>,{" "}
-                  <strong>TypeScript</strong>, <strong>HTML5</strong>,{" "}
-                  <strong>CSS3</strong>, and <strong>Tailwind CSS</strong>.
-                </li>
-                <li>
-                  Created and maintained scalable backend services using{" "}
-                  <strong>NestJS</strong>, <strong>Node.js</strong>, and{" "}
-                  <strong>Express.js</strong>.
-                </li>
-                <li>
-                  Designed and integrated secure <strong>RESTful APIs</strong>{" "}
-                  for modules like authentication and resume analysis.
-                </li>
-                <li>
-                  Managed and queried relational data using{" "}
-                  <strong>PostgreSQL</strong>.
-                </li>
-                <li>
-                  Used <strong>Git</strong> for version control and collaborated
-                  via code reviews and regular deployments.
-                </li>
-              </ol>
+        <div
+          className={`grid gap-8 ${
+            item.certificate ? "lg:grid-cols-[1.5fr_1fr]" : ""
+          }`}
+        >
+          <ul className="space-y-2.5 text-slate-600 dark:text-slate-300 leading-relaxed">
+            {item.highlights.map((h) => (
+              <li key={h} className="flex gap-3">
+                <span className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-indigo-500" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
 
+          {item.certificate && (
+            <a
+              href={item.certificate.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block self-start"
+            >
               <img
-                src="Pabitra_Internship_Certificate.jpg"
-                alt="Internship Certificate from HeyCoach"
-                className="rounded-md w-full max-w-md mx-auto border border-gray-300 sm:-mt-14"
+                src={item.certificate.src}
+                alt={item.certificate.alt}
+                loading="lazy"
+                className="rounded-xl w-full border border-slate-200 dark:border-slate-700 shadow-md group-hover:shadow-lg transition-shadow"
               />
-            </div>
-          </div>
+            </a>
+          )}
         </div>
 
-        <div className="relative card">
-          <div className="relative z-10 bg-black p-6 rounded-lg shadow-md text-white">
-            <h3 className="text-2xl font-semibold text-blue-500">
-              Frontend Developer Intern
-            </h3>
-            <div className="text-white text-sm mb-4">
-              Macv – Internship | <time dateTime="2025-03">Aug 2025</time> –{" "}
-              <time dateTime="2025-07">Present</time>
-            </div>
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {item.stack.map((t) => (
+            <li
+              key={t}
+              className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 font-mono text-xs text-slate-700 dark:text-slate-300"
+            >
+              {t}
+            </li>
+          ))}
+        </ul>
+      </article>
+    </li>
+  );
+};
 
-            <div className="grid md:grid-cols-1 items-start">
-              <ol className="list-decimal list-inside text-[#c8c3c3] leading-relaxed space-y-2">
-                <li>
-                  Built responsive and interactive user interfaces using{" "}
-                  <strong>React.js</strong>, <strong>Next.js</strong>,{" "}
-                  <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>
-                  .
-                </li>
-                <li>
-                  Integrated APIs and implemented secure{" "}
-                  <strong>authentication</strong> flows for various modules.
-                </li>
-                <li>
-                  Worked closely with backend developers to ensure smooth{" "}
-                  <strong>data fetching</strong> and optimized performance.
-                </li>
-                <li>
-                  Collaborated in an <strong>Agile</strong> environment with
-                  daily stand-ups, sprint planning, and peer code reviews.
-                </li>
-                <li>
-                  Managed project code using <strong>Git</strong> and maintained
-                  consistent version control practices.
-                </li>
-                <li>
-                  Enhanced cross-browser compatibility and improved{" "}
-                  <strong>accessibility</strong> for better user experience.
-                </li>
-              </ol>
-            </div>
-          </div>
+const Experience = () => {
+  const [lineRef, lineVisible] = useReveal({ threshold: 0.05 });
+
+  return (
+    <section id="experience" className="py-24 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeading eyebrow="// experience" title="Where I've worked">
+          Hands-on experience shipping production features across the frontend
+          and backend.
+        </SectionHeading>
+
+        <div className="relative">
+          {/* Vertical line */}
+          <span
+            ref={lineRef}
+            aria-hidden="true"
+            className={`timeline-line absolute left-4 sm:left-6 top-2 bottom-2 w-0.5 bg-gradient-to-b from-indigo-500 via-sky-400 to-slate-300 dark:to-slate-700 ${
+              lineVisible ? "is-visible" : ""
+            }`}
+          />
+          <ol className="relative">
+            {experiences.map((item, i) => (
+              <TimelineItem
+                key={`${item.company}-${item.role}`}
+                item={item}
+                index={i}
+              />
+            ))}
+          </ol>
         </div>
       </div>
     </section>

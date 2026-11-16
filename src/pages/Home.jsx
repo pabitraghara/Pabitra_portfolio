@@ -1,140 +1,154 @@
 import React from "react";
-import cv from "../../public/PABITRA-GHARA-CV.pdf";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import "../css/homeAnimations.css";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
+import { openResume } from "../utils/resume";
+
+const socials = [
+  {
+    href: "mailto:pabitraghara384@gmail.com",
+    label: "Send Email",
+    icon: MdEmail,
+  },
+  { href: "tel:+9381935038", label: "Call Phone", icon: FaPhone },
+  {
+    href: "https://www.linkedin.com/in/pabitraghara/",
+    label: "LinkedIn Profile",
+    icon: FaLinkedin,
+    external: true,
+  },
+  {
+    href: "https://github.com/pabitraghara",
+    label: "GitHub Profile",
+    icon: FaGithub,
+    external: true,
+  },
+];
+
+const Str = ({ children }) => (
+  <span className="text-emerald-600 dark:text-emerald-400">"{children}"</span>
+);
+
+const CodeCard = () => (
+  <div className="relative w-full max-w-md mx-auto lg:mx-0">
+    <div
+      aria-hidden="true"
+      className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-indigo-500/30 via-sky-400/20 to-fuchsia-500/30 blur-2xl"
+    />
+    <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 shadow-2xl backdrop-blur overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+        <span className="w-3 h-3 rounded-full bg-red-400" />
+        <span className="w-3 h-3 rounded-full bg-amber-400" />
+        <span className="w-3 h-3 rounded-full bg-emerald-400" />
+        <span className="ml-3 font-mono text-xs text-slate-500">
+          developer.js
+        </span>
+      </div>
+      <pre className="p-5 font-mono text-[13px] sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300 overflow-x-auto">
+        <code>
+          <span className="text-fuchsia-600 dark:text-fuchsia-400">const</span>{" "}
+          <span className="text-sky-600 dark:text-sky-400">developer</span> = {"{"}
+          {"\n  "}name: <Str>Pabitra Ghara</Str>,
+          {"\n  "}role: <Str>Full Stack Developer</Str>,
+          {"\n  "}current: <Str>Frontend Developer Intern @ Macv</Str>,
+          {"\n  "}stack: [<Str>React</Str>, <Str>Next.js</Str>,
+          {"\n          "}<Str>Node.js</Str>, <Str>NestJS</Str>,
+          {"\n          "}<Str>TypeScript</Str>],
+          {"\n  "}openTo: [<Str>On-Site</Str>, <Str>Hybrid</Str>,{" "}
+          <Str>Remote</Str>],
+          {"\n"}
+          {"};"}
+          <span className="caret inline-block w-2 h-4 ml-1 align-middle bg-indigo-500" />
+        </code>
+      </pre>
+    </div>
+  </div>
+);
 
 const Home = () => {
-  const handleDownload = async () => {
-    // 1. Open the resume in a new tab first (this preserves the "click" gesture)
-    const resumeUrl = cv; // Make sure this is correct (e.g., from public folder)
-    window.open(resumeUrl, "_blank");
-
-    // 2. Then asynchronously send the Discord message
-    await fetch(
-      "https://discord.com/api/webhooks/1361728535047176393/XO14QcOY7DvaQPy2Z8UP3Wrytoy3baKwOS8hg01wA_9A6NENcvNh0MLiLmvLtTgsJfPM",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          content: "📄 Someone downloaded your resume!",
-        }),
-      }
-    );
-  };
-
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section
-        id="#"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-center px-4 p-20  relative overflow-hidden"
-      >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="floating-orb orb-1"></div>
-          <div className="floating-orb orb-2"></div>
-          <div className="floating-orb orb-3"></div>
-          <div className="floating-orb orb-4"></div>
-          <div className="floating-orb orb-5"></div>
-          <div className="floating-orb orb-6"></div>
-          <div className="floating-orb orb-7"></div>
-          <div className="floating-orb orb-8"></div>
-        </div>
-        <div className="max-w-4xl relative z-10">
-          <div className="mb-8">
-            <div className="w-50 h-50 mx-auto mb-6 bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl profile-glow animate-pulse-glow">
-              <img
-                src="/pabitra.png"
-                alt=""
-                className="rounded-full border-4 border-white/20"
-              />
-            </div>
-          </div>
-          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 animate-fade-in-up">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
-              Pabitra Ghara
+    <section
+      id="home"
+      className="relative isolate overflow-hidden min-h-screen flex items-center pt-28 pb-20 px-4 sm:px-6"
+    >
+      {/* Background */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[48rem] h-[48rem] rounded-full bg-indigo-500/10 dark:bg-indigo-500/15 blur-3xl" />
+      </div>
+
+      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+        <div className="text-center lg:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-8 justify-center lg:justify-start">
+            <img
+              src="/pabitra.png"
+              alt="Portrait of Pabitra Ghara"
+              className="w-20 h-20 rounded-full object-cover ring-4 ring-indigo-500/20 shadow-lg"
+            />
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
+              </span>
+              Open for On-Site, Hybrid &amp; Remote roles
             </span>
+          </div>
+
+          <p className="font-mono text-sm text-indigo-600 dark:text-indigo-400 mb-3">
+            Hi, I&apos;m
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-[1.05] mb-4">
+            Pabitra Ghara
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-            A passionate{" "}
-            <span className="font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Full Stack Developer
-            </span>{" "}
-            specializing in React, Node.js, and modern web technologies. I
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 bg-clip-text text-transparent">
+            Full Stack Developer
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+            Specializing in React, Node.js, and modern web technologies. I
             create digital experiences that make a difference.
           </p>
 
-          <div className="flex justify-center mb-8 animate-fade-in-up animation-delay-400">
-            <a
-              onClick={handleDownload}
-              className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 rounded-full hover:scale-105 hover:shadow-2xl cursor-pointer group overflow-hidden"
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
+            <button
+              type="button"
+              onClick={openResume}
+              className="group inline-flex items-center gap-2 rounded-full bg-indigo-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-600/25 hover:bg-indigo-500 transition-colors cursor-pointer"
             >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative z-10 flex items-center gap-2">
-                Download Resume
-                <svg
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </span>
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <FiDownload />
+              Download CV
+            </button>
+            <a
+              href="#experience"
+              className="group inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-700 px-7 py-3.5 font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              View Experience
+              <FiArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-7 animate-fade-in-up animation-delay-600">
-            <a
-              href="mailto:pabitraghara384@gmail.com"
-              aria-label="Send Email"
-              className="group relative hover:scale-110 transition-all duration-300 bg-gradient-to-br from-red-500 to-pink-600 w-16 h-16 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl hover:shadow-red-500/25"
-            >
-              <MdEmail className="text-[32px] text-white cursor-pointer group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-            <a
-              href="tel:+9381935038"
-              aria-label="Call Phone"
-              className="group relative hover:scale-110 transition-all duration-300 bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl hover:shadow-green-500/25"
-            >
-              <FaPhone className="text-[32px] text-white cursor-pointer group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pabitraghara/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-              className="group relative hover:scale-110 transition-all duration-300 bg-gradient-to-br from-blue-600 to-blue-700 w-16 h-16 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl hover:shadow-blue-500/25"
-            >
-              <FaLinkedin className="text-[32px] text-white cursor-pointer group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-            <a
-              href="https://github.com/pabitraghara"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="group relative hover:scale-110 transition-all duration-300 bg-gradient-to-br from-gray-700 to-gray-900 w-16 h-16 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl hover:shadow-gray-500/25"
-            >
-              <FaGithub className="text-[32px] text-white cursor-pointer group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
+          <div className="flex items-center gap-3 justify-center lg:justify-start">
+            {socials.map(({ href, label, icon: Icon, external }) => (
+              <a
+                key={href}
+                href={href}
+                aria-label={label}
+                title={label}
+                {...(external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="w-11 h-11 inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 transition-colors"
+              >
+                <Icon className="text-lg" />
+              </a>
+            ))}
           </div>
         </div>
-      </section>
-    </div>
+
+        <CodeCard />
+      </div>
+    </section>
   );
 };
 

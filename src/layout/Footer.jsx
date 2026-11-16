@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-t border-gray-700 pt-8">
+    <footer className="bg-slate-950 text-white py-10 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-t border-slate-800 pt-8">
         {/* Branding */}
-        <div className="text-2xl font-semibold tracking-wide">
+        <div className="text-lg font-display font-semibold tracking-tight">
           © {new Date().getFullYear()} Pabitra Ghara
         </div>
 

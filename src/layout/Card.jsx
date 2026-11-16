@@ -4,7 +4,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const Card = ({ image, name, logos, githublink, githubrepolink, livelink }) => {
   return (
     // <div className="p-5 bg-black/10 backdrop-blur-lg rounded-2xl">
-    <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-transform hover:-translate-y-1 duration-300 w-full max-w-md mx-auto">
+    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-transform hover:-translate-y-1 duration-300 w-full max-w-md mx-auto">
       {/* Image */}
       <div className="relative group">
         <img
@@ -16,9 +16,9 @@ const Card = ({ image, name, logos, githublink, githubrepolink, livelink }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6 text-white space-y-4 bg-white h-[100%]">
+      <div className="p-6 text-white space-y-4 bg-white dark:bg-slate-900 h-[100%]">
         {/* Title */}
-        <h2 className="text-2xl text-black font-bold">{name}</h2>
+        <h2 className="text-2xl text-slate-900 dark:text-white font-bold">{name}</h2>
 
         {/* Tags */}
         <div className="flex flex-wrap">
