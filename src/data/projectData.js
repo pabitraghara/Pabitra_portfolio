@@ -13,95 +13,101 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
+
+/**
+ * Tech stack entries shared across projects. `name` is used for the visible
+ * chip label, the filter bar and accessible text; `color` tints the icon.
+ */
+const tech = {
+  react: { name: "React", icon: FaReact, color: "text-sky-500" },
+  node: { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
+  mongodb: { name: "MongoDB", icon: SiMongodb, color: "text-emerald-600" },
+  html: { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+  css: { name: "CSS3", icon: SiCss3, color: "text-blue-600" },
+  bootstrap: { name: "Bootstrap", icon: SiBootstrap, color: "text-purple-600" },
+  nest: { name: "NestJS", icon: SiNestjs, color: "text-red-600" },
+  typescript: { name: "TypeScript", icon: SiTypescript, color: "text-blue-700" },
+  tailwind: { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500" },
+  postgres: { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-800 dark:text-blue-400" },
+  next: { name: "Next.js", icon: SiNextdotjs, color: "text-slate-900 dark:text-white" },
+  discord: { name: "Discord", icon: SiDiscord, color: "text-indigo-600" },
+  javascript: { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+  mysql: { name: "MySQL", icon: SiMysql, color: "text-sky-700 dark:text-sky-400" },
+};
+
+/**
+ * Projects shown in the Projects section.
+ *
+ * - `featured: true` renders the project as a large showcase card.
+ * - `image` is optional; an empty string renders a branded placeholder.
+ * - `livelink` is optional; the "Live demo" button is hidden without it.
+ * - `description` is a short one-line summary shown on the card.
+ */
+export const githubProfile = "https://github.com/pabitraghara";
+export const githubRepositories =
+  "https://github.com/pabitraghara?tab=repositories";
 
 export const projects = [
   {
-    name: "Online Food Delivery System",
-    image: "/tomato.png",
-    logos: [
-      { icon: FaReact, color: "bg-blue-500" },
-      { icon: FaNodeJs, color: "bg-green-600" },
-      { icon: SiMongodb, color: "bg-emerald-600" },
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiCss3, color: "bg-blue-600" },
-      { icon: SiBootstrap, color: "bg-purple-600" },
-    ],
-    githublink: "https://github.com/pabitraghara/food-app",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
-    // livelink: "https://vercel.com",
-  },
-  {
-    name: "Manali Tours Website",
-    image: "/manali.png",
-    logos: [
-      { icon: SiNestjs, color: "bg-red-600" },
-      { icon: FaReact, color: "bg-blue-500" },
-      { icon: SiTypescript, color: "bg-blue-700" },
-      { icon: SiTailwindcss, color: "bg-cyan-500" },
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiPostgresql, color: "bg-blue-900" },
-      { icon: TbBrandNextjs, color: "bg-black" },
-    ],
-    githublink:
-      "https://github.com/pabitraghara/Manali-Tour-Package-full-stack",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
-    // livelink: "https://vercel.com",
-  },
-  {
-    image: "./rozerpay.png",
     name: "Razorpay",
-    logos: [
-      { icon: FaReact, color: "bg-blue-500" },
-      { icon: SiTailwindcss, color: "bg-cyan-500" },
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiCss3, color: "bg-blue-600" },
-    ],
+    image: "/rozerpay.png",
+    description: "TODO(SUP-1009): one-line project summary",
+    featured: true,
+    logos: [tech.react, tech.tailwind, tech.html, tech.css],
     githublink: "https://github.com/pabitraghara/Razorpay_Clone",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    githubrepolink: githubRepositories,
     livelink: "https://razorpay-clone-jade-pi.vercel.app/",
   },
   {
     name: "Discord UI Clone",
     image: "/discord.png",
-    logos: [
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiCss3, color: "bg-blue-600" },
-      { icon: SiTailwindcss, color: "bg-cyan-500" },
-      { icon: FaReact, color: "bg-blue-500" },
-      { icon: SiNextdotjs, color: "bg-black" },
-      { icon: SiDiscord, color: "bg-indigo-600" },
-    ],
+    description: "TODO(SUP-1009): one-line project summary",
+    featured: true,
+    logos: [tech.html, tech.css, tech.tailwind, tech.react, tech.next, tech.discord],
     githublink: "https://github.com/pabitraghara/Discord",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
+    githubrepolink: githubRepositories,
     livelink: "https://discord-seven-wine-88.vercel.app/",
+  },
+  {
+    name: "Online Food Delivery System",
+    image: "/tomato.png",
+    description: "TODO(SUP-1009): one-line project summary",
+    logos: [tech.react, tech.node, tech.mongodb, tech.html, tech.css, tech.bootstrap],
+    githublink: "https://github.com/pabitraghara/food-app",
+    githubrepolink: githubRepositories,
+  },
+  {
+    name: "Manali Tours Website",
+    image: "/manali.png",
+    description: "TODO(SUP-1009): one-line project summary",
+    logos: [
+      tech.nest,
+      tech.react,
+      tech.typescript,
+      tech.tailwind,
+      tech.html,
+      tech.postgres,
+      tech.next,
+    ],
+    githublink: "https://github.com/pabitraghara/Manali-Tour-Package-full-stack",
+    githubrepolink: githubRepositories,
   },
   {
     name: "Railway Reservation System",
     image: "",
-    logos: [
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiCss3, color: "bg-blue-600" },
-      { icon: SiJavascript, color: "bg-yellow-500" },
-      { icon: SiMysql, color: "bg-sky-700" },
-    ],
-    githublink: "https://github.com/pabitraghara",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
-    // livelink: "https://vercel.com",
+    description: "TODO(SUP-1009): one-line project summary",
+    logos: [tech.html, tech.css, tech.javascript, tech.mysql],
+    // TODO(SUP-1009): repository URL (currently points at the GitHub profile)
+    githublink: githubProfile,
+    githubrepolink: githubRepositories,
   },
   {
     name: "Bus Reservation System",
     image: "",
-    logos: [
-      { icon: FaReact, color: "bg-blue-500" },
-      { icon: FaNodeJs, color: "bg-green-600" },
-      { icon: SiMongodb, color: "bg-emerald-600" },
-      { icon: SiHtml5, color: "bg-orange-500" },
-      { icon: SiCss3, color: "bg-blue-600" },
-      { icon: SiBootstrap, color: "bg-purple-600" },
-    ],
-    githublink: "https://github.com/pabitraghara",
-    githubrepolink: "https://github.com/pabitraghara?tab=repositories",
-    // livelink: "https://vercel.com",
+    description: "TODO(SUP-1009): one-line project summary",
+    logos: [tech.react, tech.node, tech.mongodb, tech.html, tech.css, tech.bootstrap],
+    // TODO(SUP-1009): repository URL (currently points at the GitHub profile)
+    githublink: githubProfile,
+    githubrepolink: githubRepositories,
   },
 ];
