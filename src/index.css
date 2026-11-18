@@ -79,7 +79,33 @@
   animation: caret-blink 1s step-end infinite;
 }
 
+/* Project cards: soft glow that follows the pointer (--mx/--my set in JS) */
+.spotlight {
+  position: relative;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    rgb(99 102 241 / 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.spotlight:hover::after {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .spotlight::after {
+    display: none;
+  }
   .reveal,
   .timeline-line {
     opacity: 1;
